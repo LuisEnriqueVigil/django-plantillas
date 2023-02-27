@@ -8,5 +8,23 @@
 </head>
 <body>
     <h1>Hola {{name}}</h1>
+    <h3>Categorias:</h3>
+    <ul>
+        {# Comentario que no se puede ver en la inspeccion de la pagina #}
+        
+        {% comment %}
+            Comentario 
+            Multiliena
+        {% endcomment %}
+
+        {% for category in categories %}
+            {%if category == "desing" %}
+                <li><b>{{category}}</b></li>
+            {% else %}
+                <li>{{category}}</li>
+            {% endif %}
+        {% endfor %}
+        <h5>Total de categorias: {{ categories|length }}</h5>
+    </ul>
 </body>
 </html>

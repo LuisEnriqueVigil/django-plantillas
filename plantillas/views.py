@@ -11,8 +11,12 @@ def simple (request):
 
 def dinamico (request,name):
     ##CREANDO LA VARIBALE DEL CONTEXTO
+    ##TAMBIEN PODEMOS PASAR OBJETOS ATRAVEZ DEL CONTEXTO 
+    ## Y USAR SUS METODOS
+    categories = ["code","desing","marketing","UX/UI"]
     context = {
-        'name' : name
+        'name' : name, 
+        "categories": categories
     }
     return render(
         request= request,
